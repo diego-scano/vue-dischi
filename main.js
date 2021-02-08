@@ -11,6 +11,7 @@ new Vue({
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
     .then(function(resp) {
       self.disks = resp.data.response;
+      self.genreFiltered = self.disks;
       self.disks.forEach((item, i) => {
         if(!self.genres.includes(self.disks[i].genre)) {
           self.genres.push(self.disks[i].genre);
