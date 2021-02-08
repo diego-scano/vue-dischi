@@ -17,6 +17,18 @@ new Vue({
         }
       });
     })
+  },
+  methods: {
+    change: function() {
+      this.genreFiltered = this.disks.filter((element, i) => {
+        if(this.selected === 'All') {
+          return element;
+        }
+        if(this.disks[i].genre === this.selected) {
+          return element;
+        }
+      })
+    }
   }
 })
 

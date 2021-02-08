@@ -15,7 +15,7 @@
         <header>
             <div class="container">
                 <img src="logo.png" alt="logo" />
-                <select v-model="selected">
+                <select v-model="selected" @change="change">
                   <option disabled value="">Filtra per genere</option>
                   <option>All</option>
                   <option v-for="item in genres">{{item}}</option>
@@ -25,7 +25,7 @@
 
         <div class="cds-container container">
             <!-- Disco ad esempio -->
-            <div class="cd" v-for="item in disks">
+            <div class="cd" v-for="item in genreFiltered">
                 <img :src="item.poster" alt="">
                 <h3>{{item.title}}</h3>
                 <span class="author">{{item.author}}</span>
